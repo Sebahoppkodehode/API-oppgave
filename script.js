@@ -1,23 +1,13 @@
-const apiUrl = insertApiHere;
+const apiKey = "d0cfd2cc27b04e3e0c10e5a238f6fc8e";
 
-// fetch("apiUrl")
-//   .then((response) => {
-//     return response;
-//   })
-//   .then((data) => {
-//     console.log(data.text());
-//   });
+const apiUrl =
+  "https://api.openweathermap.org/data/2.5/weather?&units=metric&q=bergen";
 
-async function getData() {
-  try {
-    const request = await fetch(apiUrl);
-    const data = await request.json();
+async function checkWeather() {
+  const response = await fetch(apiUrl + "&appid=${apiKey}");
+  var data = await response.json();
 
-    console.log(data);
-  } catch (error) {
-    //show error
-    console.log(error);
-  }
+  console.log(data);
 }
 
-getData();
+checkWeather();
