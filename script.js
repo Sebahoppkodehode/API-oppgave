@@ -41,7 +41,7 @@ async function checkWeather(city) {
   }
 }
 
-checkWeather(); // You might want to provide a default city here
+checkWeather();
 
 searchBox.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
