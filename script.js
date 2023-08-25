@@ -1,7 +1,7 @@
 const apiKey = "d0cfd2cc27b04e3e0c10e5a238f6fc8e";
 
 const apiUrl =
-  "https://api.openweathermap.org/data/2.5/weather?&units=metric&q=bergen";
+  "https://api.openweathermap.org/data/2.5/weather?&units=metric&q=bangalore";
 
 async function checkWeather() {
   const response = await fetch(apiUrl + "&appid=${apiKey}");
@@ -9,5 +9,10 @@ async function checkWeather() {
 
   console.log(data);
 }
+
+document.querySelector(".city").innerHTML = data.name;
+document.querySelector(".temp").innerHTML = data.main.temp;
+document.querySelector(".humidity").innerHTML = data.main.humidity;
+document.querySelector(".wind").innerHTML = data.wind.speed;
 
 checkWeather();
